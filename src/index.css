@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 85.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  background-color: #000000;
+  font-weight: 400;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-width: 100%;
+  gap: 10px;
+  height: 100px;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+}
+
+.navbar img {
+  margin-top: 5px;
+}
+
+.navbar h1 {
+  font-size: 1.5em;
+  letter-spacing: 2px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 75vh;
+}
+
+.main-container {
+  height: 400px;
+  width: 400px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  border-radius: 20px;
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: 1.5rem;
+  position: relative;
+}
+
+.wrapper button {
+  margin-top: 20px;
+  font-size: 20px;
+  padding: 5px 15px;
+  border-radius: 30px;
+  font-family: inherit;
+  cursor: pointer;
+  background-color: #000000;
+  color: #ffffff;
+  /* border: 1px solid rgb(115, 115, 115); */
+  transition: all 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.wrapper button:hover {
+  -webkit-box-shadow: 0px 0px 18px 6px rgba(255, 255, 255, 0.54);
+  -moz-box-shadow: 0px 0px 18px 6px rgba(255, 255, 255, 0.54);
+  box-shadow: 0px 0px 18px 6px rgba(255, 255, 255, 0.2);
+}
+
+.wrapper button:active {
+  transform: translateY(5px);
+}
+
+@media (max-width: 500px) {
+  .main-container {
+    height: 370px;
+    width: 300px;
+  }
+
+  .wrapper {
+    height: 72vh;
+  }
+
+  footer {
+    margin-top: 20px;
+  }
+}
+
+.advice-heading {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.advice {
+  font-size: 20px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.advice-count {
+  font-size: 15px;
+  text-align: center;
+  margin-bottom: 3px;
+}
+
+.main-container img {
+  width: 100%;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+footer {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer h4 {
+  color: #ffffff;
+}
