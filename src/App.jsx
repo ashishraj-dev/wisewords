@@ -45,7 +45,7 @@ function AppNav() {
   );
 }
 
-function Main({ id, advice, getAdvice, count }) {
+function Main({ advice, getAdvice, count }) {
   return (
     <div className="wrapper">
       <main className="main-container">
