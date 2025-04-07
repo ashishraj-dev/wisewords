@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 function App() {
   const [advice, setAdvice] = useState('');
-  // const [id, setId] = useState('');
+  const [id, setId] = useState('');
   const [count, setCount] = useState(0);
 
   useEffect(function () {
@@ -19,10 +19,11 @@ function App() {
   //   console.log(data.slip.advice);
   // }
   async function getAdvice() {
-    const res = await fetch('https://thingproxy.freeboard.io/fetch/https://zenquotes.io/api/random');
+    const res = await fetch('https://dummyjson.com/quotes/random');
     const data = await res.json();
-    setAdvice(data[0].q);
-    // setId(count + 1);
+    console.log(data);
+    setAdvice(data.quote);
+    setId(data.id);
     setCount(count => count + 1);
     // console.log(data.slip.advice);
   }
@@ -30,7 +31,7 @@ function App() {
   return (
     <>
       <AppNav />
-      <Main advice={advice} getAdvice={getAdvice} count={count} />
+      <Main id={id} advice={advice} getAdvice={getAdvice} count={count} />
       <Footer />
     </>
   );
@@ -45,11 +46,11 @@ function AppNav() {
   );
 }
 
-function Main({ advice, getAdvice, count }) {
+function Main({ id, advice, getAdvice, count }) {
   return (
     <div className="wrapper">
       <main className="main-container">
-        <h3 className="advice-heading">Advice</h3>
+        <h3 className="advice-heading">Advice #{id}</h3>
         <p className="advice">
           <strong>{advice}</strong>
         </p>
