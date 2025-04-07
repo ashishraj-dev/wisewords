@@ -3,26 +3,34 @@ import { useState } from 'react';
 
 function App() {
   const [advice, setAdvice] = useState('');
-  const [id, setId] = useState('');
+  // const [id, setId] = useState('');
   const [count, setCount] = useState(0);
 
   useEffect(function () {
     getAdvice();
   }, []);
 
+  // async function getAdvice() {
+  //   const res = await fetch('https://api.adviceslip.com/advice');
+  //   const data = await res.json();
+  //   setAdvice(data.slip.advice);
+  //   setId(data.slip.id);
+  //   setCount(count => count + 1);
+  //   console.log(data.slip.advice);
+  // }
   async function getAdvice() {
-    const res = await fetch('https://api.adviceslip.com/advice');
+    const res = await fetch('https://thingproxy.freeboard.io/fetch/https://zenquotes.io/api/random');
     const data = await res.json();
-    setAdvice(data.slip.advice);
-    setId(data.slip.id);
+    setAdvice(data[0].q);
+    // setId(count + 1);
     setCount(count => count + 1);
-    console.log(data.slip.advice);
+    // console.log(data.slip.advice);
   }
 
   return (
     <>
       <AppNav />
-      <Main id={id} advice={advice} getAdvice={getAdvice} count={count} />
+      <Main advice={advice} getAdvice={getAdvice} count={count} />
       <Footer />
     </>
   );
@@ -41,7 +49,7 @@ function Main({ id, advice, getAdvice, count }) {
   return (
     <div className="wrapper">
       <main className="main-container">
-        <h3 className="advice-heading">Advice #{id}</h3>
+        <h3 className="advice-heading">Advice</h3>
         <p className="advice">
           <strong>{advice}</strong>
         </p>
